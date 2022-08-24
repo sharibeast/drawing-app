@@ -1,12 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { currentStrokeSelector } from './selectors'
-import reactLogo from './assets/react.svg'
-import './App.css'
 import { beginStroke, endStroke, updateStroke } from './actions'
 import { clearCanvas, drawStroke } from './canvasUtils'
-import { ColorPanel } from './ColorPanel'
-import { EditPanel } from './EditPanel'
+import ColorPanel from './components/molecules/ColorPanel'
 
 function App() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -66,16 +63,23 @@ function App() {
     })
   }, [])
   return (
-    <>
-      <EditPanel />
+    <div className='bg-zinc-200 h-screen flex flex-col justify-center items-center'>
+      {/* <EditPanel />
       <ColorPanel />
+      <h1 className='text-3xl text-red-500'>test</h1> */}
+      <ColorPanel />
+
       <canvas
+
+        height={700}
+        width={1024}
+        className='mx-auto'
         onMouseDown={startDrawing}
         onMouseUp={endDrawing}
         onMouseOut={endDrawing}
         onMouseMove={draw}
         ref={canvasRef} />
-    </>
+    </div>
   )
 }
 

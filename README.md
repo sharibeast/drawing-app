@@ -8,7 +8,7 @@
 
 ## Getting started
 
-you can view a live demo over at (link)
+you can view a live demo over at https://drawing-app-nine.vercel.app/
 
 To run it locally:
 

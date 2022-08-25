@@ -4,6 +4,7 @@ import { currentStrokeSelector } from './selectors'
 import { beginStroke, endStroke, updateStroke } from './actions'
 import { clearCanvas, drawStroke } from './canvasUtils'
 import ColorPanel from './components/molecules/ColorPanel'
+import { EditPanel } from './EditPanel'
 
 function App() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -64,9 +65,8 @@ function App() {
   }, [])
   return (
     <div className='bg-zinc-200 h-screen flex flex-col justify-center items-center'>
-      {/* <EditPanel />
-      <ColorPanel />
-      <h1 className='text-3xl text-red-500'>test</h1> */}
+
+      <EditPanel />
       <ColorPanel />
 
       <canvas

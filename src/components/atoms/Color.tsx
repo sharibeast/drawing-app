@@ -14,7 +14,7 @@ export default function Color({ border, h = 'h-4', w = 'w-4', color = "#0D1117",
           return (
                     <div
                               style={{ backgroundColor: color }}
-                              className={`${h} ${w}
+                              className={`${h} ${w} cursor-pointer
                                 rounded-full`}
                               onClick={onClick}
                     >
